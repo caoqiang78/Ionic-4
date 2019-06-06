@@ -8,6 +8,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./persons.component.css']
 })
 export class PersonsComponent implements OnInit, OnDestroy {
+<<<<<<< HEAD
+=======
+  private personListSubs: Subscription;
+>>>>>>> ca8aa877ff23b5ae6278989e12ec5307c06ad5c1
   personList: string[];
   private personListSubscription: Subscription;
 
@@ -15,7 +19,11 @@ export class PersonsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.personList = this.personsService.persons;
+<<<<<<< HEAD
     this.personListSubscription = this.personsService.personsChanged.subscribe( persons => { this.personList = persons; } );
+=======
+    this.personListSubs = this.personsService.personsChanged.subscribe(persons => this.personList = persons);
+>>>>>>> ca8aa877ff23b5ae6278989e12ec5307c06ad5c1
   }
 
   onRemovePerson(name: string) {
@@ -23,6 +31,10 @@ export class PersonsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+<<<<<<< HEAD
     this.personListSubscription.unsubscribe();
+=======
+    this.personListSubs.unsubscribe();
+>>>>>>> ca8aa877ff23b5ae6278989e12ec5307c06ad5c1
   }
 }
