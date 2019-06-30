@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PlaceDetailPage } from './place-detail.page';
-import { CreateBookComponent } from '../../../bookings/create-book/create-book.component';
+import { OrganicIntermediatesDetailPage } from './organic-intermediates-detail.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PlaceDetailPage
+    component: OrganicIntermediatesDetailPage
   }
 ];
 
@@ -22,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PlaceDetailPage, CreateBookComponent],
-  entryComponents: [CreateBookComponent]
+  declarations: [OrganicIntermediatesDetailPage]
 })
-export class PlaceDetailPageModule {}
+export class OrganicIntermediatesDetailPageModule {}
