@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 import { Product } from './../../product.model';
 import { ProductsService } from './../../products.service';
@@ -12,12 +13,12 @@ import { ProductsService } from './../../products.service';
 export class PegDetailPage implements OnInit {
   currentPeg: Product;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private navCtrl: NavController, private productsService: ProductsService) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       if (!paramMap.has('pegID')) {
-        this.router.navigateByUrl('/products/tabs/peg-products');
+        this.navCtrl.navigateBack('/products/tabs/peg-products');
         return;
       }
       const pegID = paramMap.get('pegID');
