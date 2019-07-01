@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../product.model';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-organic-intermediates',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organic-intermediates.page.scss'],
 })
 export class OrganicIntermediatesPage implements OnInit {
+  intermediates: Product[];
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.intermediates = this.productsService.intermediates;
   }
 
 }

@@ -5,5 +5,34 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> {{ elisas[0].name }} </ion-card-title>
+            <ion-card-subtitle> {{ elisas[0].price | currency}} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src] = "elisas[0].imageUrl"></ion-img>
+            <ion-label> {{ elisas[0].description }} </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item *ngFor = "let elisa of elisas.slice(1)">
+            <ion-avatar>
+              <ion-img [src] = "elisa.imageUrl"></ion-img>
+            </ion-avatar>
+            <ion-label> {{ elisa.name }} </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>

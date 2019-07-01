@@ -5,5 +5,33 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> {{ pegs[0].name }} </ion-card-title>
+            <ion-card-subtitle> {{ pegs[0].price | currency}} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src] = "pegs[0].imageUrl"></ion-img>
+            <ion-label> {{ pegs[0].description }} </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item  *ngFor="let peg of pegs.slice(1)" [routerLink] = "['/', 'products', 'tabs', 'peg-products', peg.id]">
+            <ion-thumbnail slot="start">
+              <ion-img [src] = "peg.imageUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label> {{ peg.description }} / ${{ peg.price }} </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -42,7 +42,7 @@ const routes: Routes = [
                         loadChildren: './organic-intermediates/organic-intermediates.module#OrganicIntermediatesPageModule'
                     },
                     {
-                        path: '',
+                        path: ':intermediatesID',
                         loadChildren: './organic-intermediates/organic-intermediates-detail/organic-intermediates-detail.module#OrganicIntermediatesDetailPageModule'
                     }
                 ]
