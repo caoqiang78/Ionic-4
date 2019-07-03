@@ -1,10 +1,11 @@
+import { AuthGuard } from './auth/auth.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'auth', loadChildren: './auth/auth.module#AuthPageModule' },
-  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' }
+  { path: 'products', loadChildren: './products/products.module#ProductsPageModule', canLoad: [AuthGuard] }
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PegDetailPage } from './peg-detail.page';
+import { PegModalComponent } from './peg-modal/peg-modal.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PegDetailPage]
+  declarations: [PegDetailPage, PegModalComponent],
+  entryComponents: [PegModalComponent]
 })
 export class PegDetailPageModule {}

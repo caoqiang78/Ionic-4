@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>elisa-detail</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/products/tabs/elisa"></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{ currentElisa.name }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-button> Order {{ currentElisa.name }} </ion-button>
 </ion-content>

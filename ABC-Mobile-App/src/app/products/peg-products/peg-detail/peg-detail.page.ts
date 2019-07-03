@@ -1,6 +1,8 @@
+import { PegModalComponent } from './peg-modal/peg-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+
+import { NavController, ModalController } from '@ionic/angular';
 
 import { Product } from './../../product.model';
 import { ProductsService } from './../../products.service';
@@ -13,7 +15,10 @@ import { ProductsService } from './../../products.service';
 export class PegDetailPage implements OnInit {
   currentPeg: Product;
 
-  constructor(private activatedRoute: ActivatedRoute, private navCtrl: NavController, private productsService: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private navCtrl: NavController,
+              private productsService: ProductsService,
+              private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -26,4 +31,21 @@ export class PegDetailPage implements OnInit {
     });
   }
 
+  onPlaceOrder() {
+    this.modalCtrl
+    .create({
+      component: PegModalComponent,
+      componentProps: {selectedPeg: this.currentPeg}
+    })
+    .then(pegModelEl => {
+      pegModelEl.present();
+      return pegModelEl.onDidDismiss();
+    })
+    .then(resultData => {
+      console.log(resultData.data, resultData.role);
+      if (resultData.role === 'confirm') {
+        console.log(resultData.data.message);
+      }
+    });
+  }
 }

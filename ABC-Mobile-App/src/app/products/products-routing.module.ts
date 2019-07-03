@@ -29,7 +29,7 @@ const routes: Routes = [
                         loadChildren: './elisa-kit/elisa-kit.module#ElisaKitPageModule'
                     },
                     {
-                        path: 'elisaID',
+                        path: ':elisaID',
                         loadChildren: './elisa-kit/elisa-detail/elisa-detail.module#ElisaDetailPageModule'
                     }
                 ]

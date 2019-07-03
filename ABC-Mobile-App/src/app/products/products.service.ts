@@ -92,4 +92,12 @@ export class ProductsService {
   getPeg(pegID: string): Product {
     return {...this._peg.find(peg => peg.id === pegID)};
   }
+
+  getElisa(elisaID: string): Product {
+    return {...this._elisa.find(elisa => elisa.id === elisaID)};
+  }
+
+  getIntermediate(intermediateID: string): Product {
+    return {...this._intermediates.find(intermediate => intermediate.id === intermediateID)};
+  }
 }

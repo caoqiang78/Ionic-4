@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ selectedPeg.name }} </ion-title>
+    <ion-buttons slot="primary" (click)="onCancel()">
+      <ion-icon name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1> Customer Input </h1>
+  <ion-button (click)="onPlaceOrder()">Order</ion-button>
+</ion-content>

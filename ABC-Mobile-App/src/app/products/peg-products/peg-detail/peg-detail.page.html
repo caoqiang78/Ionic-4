@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/products/tabs/peg-products"></ion-back-button>
+    </ion-buttons>
     <ion-title> {{ currentPeg.name }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button> Book {{ currentPeg.name }} </ion-button>
+  <ion-button (click) = "onPlaceOrder()"> Order {{ currentPeg.name }} </ion-button>
 </ion-content>
